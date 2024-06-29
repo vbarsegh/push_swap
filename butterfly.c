@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   butterfly.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbarsegh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vbarsegh <vbarsegh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 21:07:38 by vbarsegh          #+#    #+#             */
-/*   Updated: 2024/03/14 19:48:11 by vbarsegh         ###   ########.fr       */
+/*   Updated: 2024/06/29 15:21:07 by vbarsegh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	sort_with_batterfly(t_list **stack_a, t_list **stack_b, int size_nodes)
 
 	n = 0;
 	offset = my_sqrt(size_nodes) + xoranard_sqrt(size_nodes);
+	if (offset < 0)
+		offset *= -1;
 	while (*stack_a)
 	{
 		if ((*stack_a)->index <= n)
@@ -84,7 +86,7 @@ int	my_sqrt(int num)
 			return (i);
 		i++;
 	}
-	return (-1);
+	return (i);
 }
 
 int	xoranard_sqrt(int num)
@@ -98,5 +100,5 @@ int	xoranard_sqrt(int num)
 			return (i);
 		i++;
 	}
-	return (-1);
+	return (i);
 }
